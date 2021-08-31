@@ -1,9 +1,3 @@
-/*const lista1 = [
-  100,
-  200,
-  300,
-  500
-];*/
 let listaUsario = [];
 
 function datosUsuario() {
@@ -19,27 +13,35 @@ function datosUsuario() {
   }
 }
 
-function calcularMediaAritmetica(lista) {
-  let sumaLista = 0;
-  for (let i = 0; i < lista.length; i++) {
-    sumaLista = sumaLista + lista[i];
-  }
-  /*const sumaLista = lista.reduce(
+
+function calcularMediaAritmetica() {
+  //borrar datos del array 
+  listaUsario = [];
+
+  datosUsuario();
+
+  const sumaLista = listaUsario.reduce(
     function (valorAcumulado = 0, nuevoElemento) {
       return valorAcumulado + nuevoElemento;
     }
-  );*/
-  const promedio = sumaLista / lista.length;
-  return promedio;
+  )
+
+  //recibe una funcion y lo que permite es sumar o cualquie operacion cada uno de los elementos del array
+
+  const promedioLista = sumaLista / listaUsario.length;
+
+  const resultado = document.getElementById("resultado");
+  resultado.innerText = "El promedio es: " + promedioLista;
 }
 
 function numeroDatos() {
-  //saber cuantos inputs son:
-  const NoPromedios = parseInt(document.getElementById("CantidadValores").value);
-  return NoPromedios;
+  //saber cuantos input son
+  const inputNumeroDatos = document.getElementById("numeroDatos");
+  const value = parseInt(inputNumeroDatos.value);
+  return value;
 }
 
-function generarInputs() {
+function aggInput() {
   //eliminar todos los elementos hijos del padre;
   var elemento = document.getElementById("aggInputs");
   while (elemento.firstChild) {
@@ -58,7 +60,6 @@ function generarInputs() {
     let input1 = document.getElementById("aggInputs");
     input1.insertAdjacentHTML('beforeend', direccion);
   }
-  var buto = '<button type = "button" onclick = "calcularMediaAritmetica()">Calcular</button>';
   let button = document.getElementById("aggInputs");
-  button.insertAdjacentHTML('beforeend', buto);
+  button.insertAdjacentHTML('beforeend', '<buttontype="button"onclick="calcularMediaAritmetica()">Calcular</button>');
 }

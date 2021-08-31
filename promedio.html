@@ -15,10 +15,16 @@
   </header>
   <section>
     <form>
-      <label for="">
-
+      <label for="CantidadValores">
+        Digita Cuantos Valores le queres generar el promedio:
       </label>
+      <input type="number" id="CantidadValores" />
+      <button type="button" onclick="generarInputs()">Generar</button>
     </form>
+    <br>
+    <br>
+    <form id="aggInputs"></form>
+    <p id="resultado"></p>
   </section>
   <script src="./promedio.js"></script>
 </body>
